@@ -1,0 +1,71 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" version="28.1.2">
+  <diagram id="C1" name="C1 Contexto (v2)">
+    <mxGraphModel dx="4285" dy="1445" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sys" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1a73e8;fillColor=#ffffff" parent="1" vertex="1">
+          <mxGeometry x="430" y="130" width="820" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="appCli" value="App móvil (Cliente)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1a73e8;fillColor=#ffffff" parent="sys" vertex="1">
+          <mxGeometry x="280" y="160" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="appMen" value="App móvil (Mensajero)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1a73e8;fillColor=#ffffff" parent="sys" vertex="1">
+          <mxGeometry x="300" y="300" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="webOp" value="Portal Web (Operador)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1a73e8;fillColor=#ffffff" parent="sys" vertex="1">
+          <mxGeometry x="300" y="460" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="7Bn_ZLNi8kNylbMScTjM-3" value="&lt;h1&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Sistema Central RedExpress&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sys">
+          <mxGeometry x="340" y="10" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="aUsuario" value="Actor: Usuario Final" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#5f6368;fillColor=#f1f3f4" parent="1" vertex="1">
+          <mxGeometry x="-180" y="60" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aMens" value="Actor: Mensajero" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#5f6368;fillColor=#f1f3f4" parent="1" vertex="1">
+          <mxGeometry x="-190" y="280" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aOper" value="Actor: Operador Logístico" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#5f6368;fillColor=#f1f3f4" parent="1" vertex="1">
+          <mxGeometry x="-190" y="490" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sNotif" value="API de Notificaciones (tercero)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1a73e8;fillColor=#ffffff" parent="1" vertex="1">
+          <mxGeometry x="1580" y="180" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sGeo" value="Proveedor de Geolocalización (tercero)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1a73e8;fillColor=#ffffff" parent="1" vertex="1">
+          <mxGeometry x="1600" y="600" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="1) Crea pedido / consulta estado" style="endArrow=block;strokeColor=#5f6368" parent="1" source="aUsuario" target="appCli" edge="1">
+          <mxGeometry x="-0.1358" y="5" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="Registra pedido / consulta estado" style="endArrow=block;strokeColor=#5f6368" parent="1" source="appCli" target="core" edge="1">
+          <mxGeometry x="-0.0066" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="2) Reporta ubicación" style="endArrow=block;strokeColor=#5f6368" parent="1" source="aMens" target="appMen" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Envía GPS" style="endArrow=block;strokeColor=#5f6368" parent="1" source="appMen" target="core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="3) Gestiona rutas" style="endArrow=block;strokeColor=#5f6368" parent="1" source="aOper" target="webOp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="Asigna pedidos" style="endArrow=block;strokeColor=#5f6368" parent="1" source="webOp" target="core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="4) Consulta ETA" style="endArrow=block;strokeColor=#5f6368" parent="1" source="core" target="sGeo" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="5) Envía notificación" style="endArrow=block;strokeColor=#5f6368" parent="1" source="core" target="sNotif" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="core" value="Sistema Central de Logística" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1a73e8;fillColor=#ffffff" parent="1" vertex="1">
+          <mxGeometry x="1290" y="350" width="480" height="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
