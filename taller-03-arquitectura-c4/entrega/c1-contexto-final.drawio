@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" modified="2025-09-07T00:00:00.000Z" agent="GPT-5" version="20.5.3">
+  <diagram id="c1piami" name="C1_PIAMI">
+    <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1800" pageHeight="900">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="b1" value="Límite del sistema: PIAMI" style="rounded=1;dashed=1;whiteSpace=wrap;html=1;strokeColor=#3b82f6;fillColor=#eef6ff;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="150" width="950" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_asp" value="Aspirante" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6366f1;fillColor=#eef2ff;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="100" y="630" width="250" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_est" value="Estudiante" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6366f1;fillColor=#eef2ff;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="100" y="490" width="250" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_finarea" value="Área Financiera" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6366f1;fillColor=#eef2ff;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="100" y="340" width="250" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_coord" value="Coord. Posgrados" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6366f1;fillColor=#eef2ff;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="100" y="200" width="250" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_portal" value="Portal PIAMI (Aspirantes)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1d4ed8;fillColor=#ffffff;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="600" y="620" width="320" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_doc" value="Módulo Gestión Documental" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1d4ed8;fillColor=#ffffff;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="600" y="450" width="320" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_fin" value="Módulo Financiero · Integración SIGA" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1d4ed8;fillColor=#ffffff;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="990" y="560" width="380" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_acad" value="Módulo Académico Posgrados" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1d4ed8;fillColor=#ffffff;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="990" y="390" width="380" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_siga" value="SIGA (facturas PDF)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d97706;fillColor=#fff7ed;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="1420" y="580" width="330" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_smtp" value="Correo institucional (SMTP)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d97706;fillColor=#fff7ed;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="1420" y="470" width="330" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_men" value="MEN / Registros oficiales" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d97706;fillColor=#fff7ed;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="1420" y="360" width="330" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n_excel" value="Excel / BD de reportes" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d97706;fillColor=#fff7ed;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="1420" y="250" width="330" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="1) Carga docs (HTTPS/REST)" style="endArrow=block;html=1;strokeColor=#111827;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=12" edge="1" parent="1" source="n_asp" target="n_portal">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="2) Validación obligatorios" style="endArrow=block;html=1;strokeColor=#111827;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=12" edge="1" parent="1" source="n_portal" target="n_doc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="3) Consulta/estado facturas" style="endArrow=block;html=1;strokeColor=#111827;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=12" edge="1" parent="1" source="n_est" target="n_fin">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="4) Obtiene PDF" style="endArrow=block;html=1;strokeColor=#111827;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=12" edge="1" parent="1" source="n_fin" target="n_siga">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="5) Envío email con PDF" style="endArrow=block;html=1;strokeColor=#111827;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=12" edge="1" parent="1" source="n_fin" target="n_smtp">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="6) Solicita NIES/Resoluciones" style="endArrow=block;html=1;strokeColor=#111827;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=12" edge="1" parent="1" source="n_coord" target="n_acad">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="7) Consulta oficial" style="endArrow=block;html=1;strokeColor=#111827;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=12" edge="1" parent="1" source="n_acad" target="n_men">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="8) Llena Excel/DB" style="endArrow=block;html=1;strokeColor=#111827;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=12" edge="1" parent="1" source="n_acad" target="n_excel">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
